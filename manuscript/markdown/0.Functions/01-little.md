@@ -185,7 +185,7 @@ JavaScript가 undefined 값을 undefined라고 표현한다는 것을 보았고,
     (() => {})()
       //=> undefined
 
-We said that the function returns the result of evaluating a *block*, and we said that a block is a (possibly empty) list of JavaScript *statements* separated by semicolons.[^break]
+우리는 함수가 블록을 평가한 결과를 반환한다고 말했고, 블록이 세미콜론으로 구분된 JavaScript 문장의 (비어 있을 수도 있는) 목록이라고 말했습니다.[^break]
 
 [^break]: 문장들을 줄바꿈으로 구분할 수도 있습니다. 인터넷 논쟁을 따라가는 독자들은 자동 세미콜론 삽입이라는 것을 알고 있을 것입니다. 기본적으로, JavaScript가 여러분의 코드를 보고 여러분이 세미콜론을 생략한 경우 어디에 세미콜론을 넣으려고 했는지 추측하는 규칙을 따르는 단계가 있습니다. 이 기능은 원래 일종의 도움이 되는 오류 수정으로 만들어졌습니다. 일부 프로그래머들은 이것이 언어 정의의 일부이므로 이를 활용하는 코드를 작성하는 것이 공정한 게임이라고 주장하므로, JavaScript가 그들을 위해 삽입할 세미콜론을 의도적으로 생략합니다
 
