@@ -1,49 +1,49 @@
-# Prelude: Values and Expressions over Coffee
+# 서문: 커피와 함께하는 값과 표현식
 
-*The following material is extremely basic, however like most stories, the best way to begin is to start at the very beginning.*
+*다음 내용은 매우 기초적이지만, 대부분의 이야기처럼 가장 좋은 시작은 처음부터 시작하는 것입니다.*
 
-Imagine we are visiting our favourite coffee shop. They will make for you just about any drink you desire, from a short, intense espresso ristretto through a dry cappuccino, up to those coffee-flavoured desert concoctions featuring various concentrated syrups and milks. (You tolerate the existence of sugary drinks because they provide a sufficient profit margin to the establishment to finance your hanging out there all day using their WiFi and ordering a $3 drink every few hours.)
+우리가 좋아하는 커피숍을 방문한다고 상상해보세요. 그들은 진한 에스프레소 리스트레토부터 드라이 카푸치노, 그리고 다양한 시럽과 우유가 들어간 커피 맛 디저트 음료에 이르기까지 당신이 원하는 어떤 음료든 만들어줄 것입니다. (당신은 이런 달콤한 음료들의 존재를 용인합니다. 왜냐하면 이러한 음료들이 충분한 수익을 창출해 당신이 하루 종일 그들의 와이파이를 사용하며 몇 시간마다 3달러짜리 음료를 주문하며 있을 수 있게 해주기 때문입니다.)
 
-You express your order at one end of their counter, the folks behind the counter perform their magic, and deliver the coffee you value at the other end. This is exactly how the JavaScript environment works for the purpose of this book. We are going to dispense with web servers, browsers and other complexities and deal with this simple model: You give the computer an [expression], and it returns a [value], just as you express your wishes to a barista and receive a coffee in return.
+당신은 카운터 한쪽 끝에서 주문을 표현하고, 카운터 뒤의 직원들이 마법을 부려 다른 쪽 끝에서 당신이 원하는 커피를 전달합니다. 이것이 바로 이 책에서 다룰 JavaScript 환경이 작동하는 방식입니다. 우리는 웹 서버, 브라우저 및 기타 복잡한 것들은 제쳐두고 이 간단한 모델만 다룰 것입니다: 당신이 컴퓨터에 표현식을 주면, 바리스타에게 당신의 요구사항을 [expression]하고 커피를 받는 것처럼 컴퓨터가 [value]을 반환합니다.
 
 [expression]: https://en.wikipedia.org/wiki/Expression_(computer_science)
 [value]: https://en.wikipedia.org/wiki/Value_(computer_science)
 
-## values are expressions
+## 값은 표현식이다
 
-All values are expressions. Say you hand the barista a café Cubano. Yup, you hand over a cup with some coffee infused through partially caramelized sugar. You say, "I want one of these." The barista is no fool, she gives it straight back to you, and you get exactly what you want. Thus, a café Cubano is an expression (you can use it to place an order) and a value (you get it back from the barista).
+모든 값은 표현식입니다. 당신이 바리스타에게 카페 쿠바노를 건넨다고 해봅시다. 네, 부분적으로 카라멜화된 설탕을 통해 우려낸 커피가 담긴 컵을 건네는 겁니다. 당신이 "이거 하나 주세요"라고 말하면, 영리한 바리스타는 그대로 돌려주고, 당신은 정확히 원하는 것을 받게 됩니다. 따라서 카페 쿠바노는 표현식(주문할 때 사용할 수 있음)이면서 동시에 값(바리스타에게서 받는 것)입니다.
 
-Let's try this with something the computer understands easily:
+컴퓨터가 쉽게 이해할 수 있는 것으로 시도해봅시다:
 
     42
 
-Is this an expression? A value? Neither? Or both?
+이것은 표현식일까요? 값일까요? 둘 다 아닐까요? 아니면 둘 다일까요?
 
-The answer is, this is both an expression *and* a value.[^representation] The way you can tell that it's both is very easy: When you type it into JavaScript, you get the same thing back, just like our café Cubano:
+답은 이것이 표현식이면서 *동시에* 값이라는 것입니다.[^representation] 이것을 알 수 있는 방법은 매우 간단합니다: JavaScript에 입력하면 카페 쿠바노처럼 같은 것이 돌아옵니다:
 
     42
       //=> 42
 
-[^representation]: Technically, it's a *representation* of a value using Base10 notation, but we needn't worry about that in this book. You and I both understand that this means "42," and so does the computer.
+[^representation]: 기술적으로 이는 Base10 표기법을 사용한 값의 표현이지만 이 책에서는 이에 대해 걱정할 필요가 없습니다. 당신과 나는 둘 다 이것이 "42"를 의미한다는 것을 이해하고 있으며 컴퓨터도 마찬가지입니다..
 
-All values are expressions. That's easy! Are there any other kinds of expressions? Sure! let's go back to the coffee shop. Instead of handing over the finished coffee, we can hand over the ingredients. Let's hand over some ground coffee plus some boiling water.
+모든 값은 표현식입니다. 그건 쉽죠! 다른 종류의 표현식도 있을까요? 물론입니다! 커피숍으로 돌아가봅시다. 완성된 커피를 건네는 대신, 재료를 건넬 수 있습니다. 갈은 커피와 끓는 물을 건네봅시다.
 
-A> Astute readers will realize we're omitting something. Congratulations! Take a sip of espresso. We'll get to that in a moment.
+A>  눈치 빠른 독자들은 뭔가 빠졌다는 것을 알아차렸을 것입니다. 축하합니다! 에스프레소 한 모금 하세요. 곧 그것에 대해 다룰 것입니다.
 
-Now the barista gives us back an espresso. And if we hand over the espresso, we get the espresso right back. So, boiling water plus ground coffee is an expression, but it isn't a value.[^homoiconicity] Boiling water is a value. Ground coffee is a value. Espresso is a value. Boiling water plus ground coffee is an expression.
+이제 바리스타가 우리에게 에스프레소를 주겠죠. 그리고 우리가 에스프레소를 건네면, 그대로 에스프레소를 돌려받습니다. 따라서 끓는 물과 갈은 커피는 표현식이지만, 값은 아닙니다.[^homoiconicity] 끓는 물은 값입니다. 갈은 커피는 값입니다. 에스프레소는 값입니다. 끓는 물과 갈은 커피를 더한 것은 표현식입니다.
 
-[^homoiconicity]: In some languages, expressions are a kind of value unto themselves and can be manipulated. The grandfather of such languages is Lisp. JavaScript is not such a language, expressions in and of themselves are not values.
+[^homoiconicity]: 일부 언어에서는 표현 자체가 일종의 가치이며 조작될 수 있습니다. 그러한 언어의 할아버지는 Lisp입니다. JavaScript는 그러한 언어가 아니며 표현 자체는 값이 아닙니다.
 
-Let's try this as well with something else the computer understands easily:
+
+컴퓨터가 쉽게 이해할 수 있는 다른 것으로도 시도해봅시다:
 
     "JavaScript" + " " + "Allonge"
       //=> "JavaScript Allonge"
 
-Now we see that "strings" are values, and you can make an expression out of strings and an operator `+`. Since strings are values, they are also expressions by themselves. But strings with operators are not values, they are expressions. Now we know what was missing with our "coffee grounds plus hot water" example. The coffee grounds were a value, the boiling hot water was a value, and the "plus" operator between them made the whole thing an expression that was not a value.
+이제 우리는 "문자열"이 값이며, 문자열과 + 연산자로 표현식을 만들 수 있다는 것을 알게 되었습니다. 문자열이 값이기 때문에, 그것들 자체로도 표현식입니다. 하지만 연산자가 있는 문자열은 값이 아니라 표현식입니다. 이제 우리는 "커피 가루와 뜨거운 물" 예시에서 무엇이 빠졌는지 알게 되었습니다. 커피 가루는 값이었고, 끓는 뜨거운 물도 값이었으며, 그들 사이의 "더하기" 연산자가 전체를 값이 아닌 표현식으로 만들었습니다.
 
-## values and identity
-
-In JavaScript, we test whether two values are identical with the `===` operator, and whether they are not identical with the `!==` operator:
+## 값과 동일성
+JavaScript에서는 `===` 연산자로 두 값이 동일한지 테스트하고, `!==` 연산자로 동일하지 않은지 테스트합니다:
 
 		2 === 2
 			//=> true
@@ -51,9 +51,9 @@ In JavaScript, we test whether two values are identical with the `===` operator,
 		'hello' !== 'goodbye'
 			//=> true
 			
-How does `===` work, exactly? Imagine that you're shown a cup of coffee. And then you're shown another cup of coffee. Are the two cups "identical?" In JavaScript, there are four possibilities:
+`===` 는 정확히 어떻게 작동할까요? 커피 한 잔을 보여준다고 상상해보세요. 그리고 또 다른 커피 한 잔을 보여줍니다. 이 두 잔은 "동일"할까요? JavaScript에서는 네 가지 가능성이 있습니다:
 
-First, sometimes, the cups are of different kinds. One is a demitasse, the other a mug. This corresponds to comparing two things in JavaScript that have different *types*. For example, the string `"2"` is not the same thing as the number `2`. Strings and numbers are different types, so strings and numbers are never identical:
+첫째, 때로는 컵의 종류가 다릅니다. 하나는 데미타스이고 다른 하나는 머그잔입니다. 이는 JavaScript에서 서로 다른 타입을 가진 두 가지를 비교하는 것에 해당합니다. 예를 들어, 문자열 `"2"`는 숫자 `2`와 같지 않습니다. 문자열과 숫자는 다른 타입이므로 절대로 동일할 수 없습니다:
 
     2 === '2'
       //=> false
@@ -61,7 +61,7 @@ First, sometimes, the cups are of different kinds. One is a demitasse, the other
     true !== 'true'
       //=> true
 
-Second, sometimes, the cups are of the same type--perhaps two espresso cups--but they have different contents. One holds a single, one a double. This corresponds to comparing two JavaScript values that have the same type but different "content." For example, the number `5` is not the same thing as the number `2`.
+둘째, 때로는 컵이 같은 종류일 수 있습니다 - 아마도 두 개의 에스프레소 컵 - 하지만 그들의 내용물이 다릅니다. 하나는 싱글샷이고 다른 하나는 더블샷입니다. 이는 같은 타입이지만 다른 "내용"을 가진 두 JavaScript 값을 비교하는 것에 해당합니다. 예를 들어, 숫자 `5`는 숫자 `2`와 같지 않습니다.
 
     true === false
       //=> false
@@ -72,11 +72,11 @@ Second, sometimes, the cups are of the same type--perhaps two espresso cups--but
     'two' === 'five'
       //=> false
 
-What if the cups are of the same type *and* the contents are the same? Well, JavaScript's third and fourth possibilities cover that.
+만약 컵이 같은 종류이고 내용물도 같다면 어떨까요? JavaScript의 세 번째와 네 번째 가능성이 이를 다룹니다.
 
-### value types
+### 값 타입
 
-Third, some types of cups have no distinguishing marks on them. If they are the same kind of cup, and they hold the same contents, we have no way to tell the difference between them. This is the case with the strings, numbers, and booleans we have seen so far.
+셋째, 어떤 종류의 컵들은 구별할 수 있는 표시가 없습니다. 만약 그들이 같은 종류의 컵이고 같은 내용물을 담고 있다면, 우리는 그들의 차이점을 구별할 방법이 없습니다. 이는 우리가 지금까지 본 문자열, 숫자, 불리언의 경우입니다.
 
     2 + 2 === 4
       //=> true
@@ -84,27 +84,27 @@ Third, some types of cups have no distinguishing marks on them. If they are the 
     (2 + 2 === 4) === (2 !== 5)
       //=> true
       
-Note well what is happening with these examples: Even when we obtain a string, number, or boolean as the result of evaluating an expression, it is identical to another value of the same type with the same "content." Strings, numbers, and booleans are examples of what JavaScript calls "value" or "primitive" types. We'll use both terms interchangeably.
+이 예제들에서 무슨 일이 일어나고 있는지 잘 보세요: 표현식을 평가한 결과로 문자열, 숫자, 또는 불리언을 얻을 때조차도, 그것은 같은 "내용"을 가진 같은 타입의 다른 값과 동일합니다. 문자열, 숫자, 그리고 불리언은 JavaScript가 "값" 또는 "원시" 타입이라고 부르는 것의 예시입니다. 우리는 이 두 용어를 같은 의미로 사용할 것입니다.
 
-We haven't encountered the fourth possibility yet. Stretching the metaphor somewhat, some types of cups have a serial number on the bottom. So even if you have two cups of the same type, and their contents are the same, you can still distinguish between them.
+우리는 아직 네 번째 가능성을 만나지 못했습니다. 비유를 약간 확장하자면, 어떤 종류의 컵들은 바닥에 일련번호가 있습니다. 따라서 같은 종류의 두 컵이 있고 그들의 내용물이 같더라도, 여전히 그들을 구별할 수 있습니다.
 
-![Cafe Macchiato is also a fine drink, especially when following up on the fortunes of the Azzurri or the standings in the Giro d'Italia](images/macchiato_1200.jpg)
+![Cafe Macchiato is also a fine drink, especially when following up on the fortunes of the Azzurri or the standings in the Giro d'Italia](../images/macchiato_1200.jpg)
 
-### reference types
+### 참조 타입
 
-So what kinds of values might be the same type and have the same contents, but not be considered identical to JavaScript? Let's meet a data structure that is very common in contemporary programming languages, the *Array* (other languages sometimes call it a List or a Vector).
+그렇다면 어떤 종류의 값들이 같은 타입이고 같은 내용을 가지고 있지만, JavaScript에서는 동일하다고 간주되지 않을까요? 현대 프로그래밍 언어에서 매우 흔한 데이터 구조인 배열(다른 언어에서는 때때로 리스트나 벡터라고 부름)을 만나봅시다.
 
-An array looks like this: `[1, 2, 3]`. This is an expression, and you can combine `[]` with other expressions. Go wild with things like:
+배열은 이렇게 생겼습니다: `[1, 2, 3]`. 이것은 표현식이며, []를 다른 표현식과 결합할 수 있습니다. 다음과 같은 것들을 마음껏 시도해보세요:
 
     [2-1, 2, 2+1]
     [1, 1+1, 1+1+1]
     
-Notice that you are always generating arrays with the same contents. But are they identical the same way that every value of `42` is identical to every other value of `42`? Try these for yourself:
+여러분은 항상 같은 내용을 가진 배열들을 생성하고 있다는 것을 주목하세요. 하지만 이들은 모든 42라는 값이 다른 모든 42라는 값과 동일한 것처럼 동일할까요? 직접 시도해보세요:
 
     [2-1, 2, 2+1] === [1,2,3]
     [1,2,3] === [1, 2, 3]
     [1, 2, 3] === [1, 2, 3]
   
-How about that! When you type `[1, 2, 3]` or any of its variations, you are typing an expression that generates its own *unique* array that is not identical to any other array, even if that other array also looks like `[1, 2, 3]`. It's as if JavaScript is generating new cups of coffee with serial numbers on the bottom.
+놀랍죠! `[1, 2, 3]` 또는 그것의 변형을 입력할 때, 여러분은 다른 어떤 배열과도 동일하지 않은 고유한 배열을 생성하는 표현식을 입력하고 있는 것입니다. 심지어 그 다른 배열도 `[1, 2, 3]`처럼 보일지라도 말입니다. 마치 JavaScript가 바닥에 일련번호가 있는 새로운 커피 컵을 생성하는 것과 같습니다.
 
-They look the same, but if you examine them with `===`, you see that they are different. Every time you evaluate an expression (including typing something in) to create an array, you're creating a new, distinct value even if it *appears* to be the same as some other array value. As we'll see, this is true of many other kinds of values, including *functions*, the main subject of this book.
+그들은 똑같아 보이지만, ===로 검사해보면 다르다는 것을 알 수 있습니다. 배열을 만들기 위해 표현식을 평가할 때마다(무언가를 입력하는 것 포함), 다른 배열 값과 똑같아 보이더라도 새롭고 구별되는 값을 만드는 것입니다. 우리가 보게 될 것처럼, 이는 이 책의 주요 주제인 함수를 포함한 다른 많은 종류의 값들에도 해당됩니다.
