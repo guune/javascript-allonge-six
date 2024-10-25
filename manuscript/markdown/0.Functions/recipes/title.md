@@ -1,6 +1,6 @@
 # 함수의 기본 기능 레시
 
-![Before combining ingredients, begin with implements so clean, they gleam.](../images/mirage.jpg)
+![Before combining ingredients, begin with implements so clean, they gleam.](../../../images/mirage.jpg)
 
 기본적인 순수 함수와 클로저를 살펴본 후, 함수를 반환하는 함수의 전제에 초점을 맞춘 몇 가지 실용적인 방법을 살펴보겠습니다
 
