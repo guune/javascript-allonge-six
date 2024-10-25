@@ -1,19 +1,19 @@
 ## Summary
 
-T> ### Functions
-T>
-T> * Functions are values that can be part of expressions, returned from other functions, and so forth.
-T> * Functions are *reference values*.
-T> * Functions are applied to arguments.
-T> * The arguments are passed by sharing, which is also called "pass by value."
-T> * Fat arrow functions have expressions or blocks as their bodies.
-T> * `function` keyword functions always have blocks as their bodies.
-T> * Function bodies have zero or more statements.
-T> * Expression bodies evaluate to the value of the expression.
-T> * Block bodies evaluate to whatever is returned with the `return` keyword, or to `undefined`.
-T> * JavaScript uses `const` to bind values to names within block scope.
-T> * JavaScript uses function declarations to bind functions to names within function scope. Function declarations are "hoisted."
-T> * Function application creates a scope.
-T> * Blocks also create scopes if `const` statements are within them.
-T> * Scopes are nested and free variable references closed over.
-T> * Variables can shadow variables in an enclosing scope.
+### 함수
+
+- 함수는 표현식의 일부가 될 수 있고, 다른 함수에서 반환될 수 있는 등의 값입니다.
+- 함수는 참조 값입니다.
+- 함수는 인자에 적용됩니다.
+- 인자는 공유에 의한 전달(pass by sharing)로 전달되며, 이는 "값에 의한 전달(pass by value)"이라고도 합니다.
+- 화살표 함수는 표현식이나 블록을 본문으로 가집니다.
+- function 키워드 함수는 항상 블록을 본문으로 가집니다.
+- 함수 본문은 0개 이상의 구문을 가집니다.
+- 표현식 본문은 해당 표현식의 값으로 평가됩니다.
+- 블록 본문은 return 키워드로 반환되는 것으로 평가되거나, undefined로 평가됩니다.
+- JavaScript는 const를 사용하여 블록 스코프 내에서 값을 이름에 바인딩합니다.
+- JavaScript는 함수 선언을 사용하여 함수 스코프 내에서 함수를 이름에 바인딩합니다. 함수 선언은 "호이스팅"됩니다.
+- 함수 적용은 스코프를 생성합니다.
+- 블록도 const 구문이 있는 경우 스코프를 생성합니다.
+- 스코프는 중첩되고 자유 변수 참조가 클로저됩니다.
+- 변수는 둘러싸는 스코프의 변수를 섀도잉할 수 있습니다.
