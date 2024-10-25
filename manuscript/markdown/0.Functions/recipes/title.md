@@ -1,4 +1,4 @@
-# 함수의 기본 기능 레시
+# 함수의 기본 기능 레시피
 
 ![Before combining ingredients, begin with implements so clean, they gleam.](../../../images/mirage.jpg)
 
