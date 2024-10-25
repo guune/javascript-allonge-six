@@ -1,9 +1,9 @@
-# Recipes with Basic Functions
+# 함수의 기본 기능 레시
 
-![Before combining ingredients, begin with implements so clean, they gleam.](images/mirage.jpg)
+![Before combining ingredients, begin with implements so clean, they gleam.](../images/mirage.jpg)
 
-Having looked at basic pure functions and closures, we're going to see some practical recipes that focus on the premise of functions that return functions.
+기본적인 순수 함수와 클로저를 살펴본 후, 함수를 반환하는 함수의 전제에 초점을 맞춘 몇 가지 실용적인 방법을 살펴보겠습니다
 
-### Disclaimer
+### 면책조항
 
-The recipes are written for practicality, and their implementation may introduce JavaScript features that haven't been discussed in the text to this point, such as methods and/or prototypes. The overall *use* of each recipe will fit within the spirit of the language discussed so far, even if the implementations may not.
+레시피는 실용성을 위해 작성되었으며 해당 구현에는 메소드 및/또는 프로토타입과 같이 지금까지 텍스트에서 논의되지 않은 JavaScript 기능이 도입될 수 있습니다. 각 레시피의 전반적인 *사용*은 구현이 그렇지 않더라도 지금까지 논의된 언어의 정신에 맞을 것입니다.
