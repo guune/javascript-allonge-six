@@ -1,6 +1,6 @@
 ## Object.assign
 
-It's very common to want to "extend" an object by assigning properties to it:
+객체의 속성을 할당하여 "확장"하고 싶어 하는 경우가 매우 흔합니다:
 
     const inventory = {
       apples: 12,
@@ -10,7 +10,7 @@ It's very common to want to "extend" an object by assigning properties to it:
     inventory.bananas = 54;
     inventory.pears = 24;
 
-It's also common to want to assign the properties of one object to another:
+또한 한 객체의 속성을 다른 객체에 할당하고 싶어 하는 경우도 흔합니다:
 
 [shallow copy]: https://en.wikipedia.org/wiki/Object_copy#Shallow_copy
 
@@ -18,7 +18,7 @@ It's also common to want to assign the properties of one object to another:
         inventory[fruit] = shipment[fruit]
       }
 
-Both needs can be met with `Object.assign`, a standard function. You can copy an object by extending an empty object:
+이 두 가지 필요를 모두 충족시킬 수 있는 표준 함수가 `Object.assign`입니다. 빈 객체로 객체를 복사할 수 있습니다:
 
     Object.assign({}, {
       apples: 12,
@@ -26,7 +26,7 @@ Both needs can be met with `Object.assign`, a standard function. You can copy an
     })
       //=> { apples: 12, oranges: 12 }
 
-You can extend one object with another:
+한 객체를 다른 객체로 확장할 수 있습니다:
 
     const inventory = {
       apples: 12,
@@ -44,7 +44,7 @@ You can extend one object with another:
       //     bananas: 54,
       //     pears: 24 }
       
-And when we discuss prototypes, we will use `Object.assign` to turn this:
+그리고 프로토타입에 대해 논의할 때는 `Object.assign`을 사용하여 다음과 같이 변환할 것입니다:
 
     const Queue = function () {
       this.array = [];
@@ -62,7 +62,7 @@ And when we discuss prototypes, we will use `Object.assign` to turn this:
       // ...
     }
 
-Into this:
+이를 다음과 같이 변환합니다:
 
     const Queue = function () {
       Object.assign(this, {
@@ -84,4 +84,5 @@ Into this:
       }      
     });
     
-Assigning properties from one object to another (also called "cloning" or "shallow copying") is a basic building block that we will later use to implement more advanced paradigms like mixins.
+한 객체의 속성을 다른 객체로 할당하는 것(또는 "복제" 또는 "얕은 복사"라고도 함)은 이후에 믹스인과 같은 더 고급 패러다임을 구현하는 데 사용할 기본 빌딩 블록입니다.
+
