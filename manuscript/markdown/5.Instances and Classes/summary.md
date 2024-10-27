@@ -1,10 +1,9 @@
 ## Summary
 
-T> ### Instances and Classes
-T>
-T> * The `new` keyword turns any function into a *constructor* for creating *instances*.
-T> * All functions have a `prototype` element.
-T> * Instances behave as if the elements of their constructor's prototype are their elements.
-T> * The `class` keyword acts as *syntactic sugar* for writing constructor functions.
-T> * Classes created with the class keyword are actually constructor functions with optionally chained prototypes.
-T> * Classes should be used in moderation, the syntax deliberately limits the flexibility and class hierarchies can lead to overly coupled code.
+### 인스턴스와 클래스
+* `new` 키워드는 모든 함수를 인스턴스를 생성하기 위한 생성자로 변환합니다.
+* 모든 함수는 프로토타입 요소를 가지고 있습니다.
+* 인스턴스는 생성자의 프로토타입 요소가 자신의 요소인 것처럼 동작합니다.
+* `class` 키워드는 생성자 함수를 작성하기 위한 구문 설탕(syntactic sugar)입니다.
+* `class` 키워드로 생성된 클래스는 실제로 선택적으로 연결된 프로토타입을 가진 생성자 함수입니다.
+* 클래스는 적당히 사용해야 하며, 구문은 의도적으로 유연성을 제한하고 클래스 계층 구조는 코드의 결합도를 높일 수 있습니다.
